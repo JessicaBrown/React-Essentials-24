@@ -1,6 +1,6 @@
 import React from "react";
-import "./header.css";
 import reactCoreConceptImg from "../../assets/react-core-concepts.png";
+import "./header.css";
 
 export const Header = () => {
   const reactDescriptions = ["Fundamental", "Crucial", "Core"];
