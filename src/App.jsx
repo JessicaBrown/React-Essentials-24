@@ -11,26 +11,8 @@ const App = () => {
 
   const handleClick = (selectedTab) => {
     setTab(selectedTab);
-    // will always show previous state value
-    // bc app has to execute again to see the next value
-    // console.log("test", tab);
   };
-  // will show updated state
-  // console.log(tab);
 
-  //conditional rendering another option with less in the JSX
-  const tabContent =
-    tab !== null ? (
-      <>
-        <h3>{EXAMPLES[tab].title}</h3>
-        <p>{EXAMPLES[tab].description}</p>
-        <pre>
-          <code>{EXAMPLES[tab].code}</code>
-        </pre>
-      </>
-    ) : (
-      "Please Select A Topic"
-    );
   return (
     <div>
       <Header />
@@ -50,7 +32,6 @@ const App = () => {
         </section>
         <section id="examples">
           <h2>Examples</h2>
-          {/* isSelectedTab will be true or false depending on the tab clicked */}
           <menu>
             <TabButton
               isSelectedTab={tab === "components"}
@@ -78,7 +59,6 @@ const App = () => {
             </TabButton>
           </menu>
           <div id="tab-content">
-            {/* conditional rendering */}
             {tab !== null ? (
               <>
                 <h3>{EXAMPLES[tab].title}</h3>
@@ -90,9 +70,6 @@ const App = () => {
             ) : (
               "Please Select A Topic"
             )}
-
-            <h2>Another way to conditionally render</h2>
-            {tabContent}
           </div>
         </section>
       </main>
