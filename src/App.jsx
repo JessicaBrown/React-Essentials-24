@@ -7,16 +7,11 @@ import { CORE_CONCEPTS } from "./data.js";
 import { EXAMPLES } from "./data.js";
 
 const App = () => {
-  const [tab, setTab] = useState("components");
+  const [tab, setTab] = useState(null);
 
   const handleClick = (selectedTab) => {
     setTab(selectedTab);
-    // will always show previous state value
-    // bc app has to execute again to see the next value
-    // console.log("test", tab);
   };
-  // will show updated state
-  // console.log(tab);
 
   return (
     <div>
@@ -38,19 +33,43 @@ const App = () => {
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-            <TabButton onclick={() => handleClick("components")}>
+            <TabButton
+              isSelectedTab={tab === "components"}
+              onclick={() => handleClick("components")}
+            >
               Components
             </TabButton>
-            <TabButton onclick={() => handleClick("jsx")}>JSX</TabButton>
-            <TabButton onclick={() => handleClick("props")}>Props</TabButton>
-            <TabButton onclick={() => handleClick("state")}>State</TabButton>
+            <TabButton
+              isSelectedTab={tab === "jsx"}
+              onclick={() => handleClick("jsx")}
+            >
+              JSX
+            </TabButton>
+            <TabButton
+              tabSelected={tab === "props"}
+              onclick={() => handleClick("props")}
+            >
+              Props
+            </TabButton>
+            <TabButton
+              tabSelected={tab === "state"}
+              onclick={() => handleClick("state")}
+            >
+              State
+            </TabButton>
           </menu>
           <div id="tab-content">
-            <h3>{EXAMPLES[tab].title}</h3>
-            <p>{EXAMPLES[tab].description}</p>
-            <pre>
-              <code>{EXAMPLES[tab].code}</code>
-            </pre>
+            {tab !== null ? (
+              <>
+                <h3>{EXAMPLES[tab].title}</h3>
+                <p>{EXAMPLES[tab].description}</p>
+                <pre>
+                  <code>{EXAMPLES[tab].code}</code>
+                </pre>
+              </>
+            ) : (
+              "Please Select A Topic"
+            )}
           </div>
         </section>
       </main>
