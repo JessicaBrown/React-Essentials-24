@@ -1,8 +1,15 @@
-export const Tab = ({ children, isSelectedTab, ...forwardProps }) => {
+export const Tab = ({
+  children,
+  isSelectedTab,
+  ...forwardOnClickWithProps
+}) => {
   return (
     <>
       <li>
-        <button className={isSelectedTab ? "active" : ""} {...forwardProps}>
+        <button
+          className={isSelectedTab ? "active" : ""}
+          {...forwardOnClickWithProps}
+        >
           {children}
         </button>
       </li>
