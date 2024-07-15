@@ -1,5 +1,5 @@
 import { Section } from "../components/Section.jsx";
-import { JBNCustomTabs } from "../components/Tabs/JBNCustomTabs.jsx";
+import { JBNCustomTabs } from "../components/CustomTabs/JBNCustomTabs.jsx";
 
 import { EXAMPLES } from "../data.js";
 
