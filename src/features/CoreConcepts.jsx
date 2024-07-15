@@ -5,14 +5,6 @@ import { CORE_CONCEPTS } from "../data.js";
 export const CoreConcepts = () => {
   return (
     <Section title="Core Concepts" id="core-concepts">
-      {/* <h2>Core Concepts</h2> 
-      
-      created Section Component bc TITLE/h2 is reused on the page
-      and in multiple components 
-
-      This is how to correctly make a custome wrapper in React
-      
-      */}
       <ul>
         {CORE_CONCEPTS.map((cc) => (
           <CoreConcept

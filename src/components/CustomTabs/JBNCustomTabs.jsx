@@ -12,7 +12,6 @@ export const JBNCustomTabs = ({ tabTitles, data }) => {
     setActiveTab(selectedTab);
     setDirty(true);
   };
-  console.log("isDirty", isDirty);
 
   return (
     <>
@@ -32,25 +31,6 @@ export const JBNCustomTabs = ({ tabTitles, data }) => {
           </>
         }
       />
-      {/* <Tab
-          isSelectedTab={title === tabTitles}
-          onClick={() => handleClick("jsx")}
-        >
-          JSX
-        </Tab>
-        <Tab
-          isSelectedTab={tab === "props"}
-          onClick={() => handleClick("props")}
-        >
-          Props
-        </Tab>
-        <Tab
-          isSelectedTab={tab === "state"}
-          onClick={() => handleClick("state")}
-        >
-          State
-        </Tab> */}
-
       <TabContent isDirty={isDirty} data={data} activeTab={activeTab} />
     </>
   );
