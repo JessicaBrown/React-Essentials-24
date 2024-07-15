@@ -83,4 +83,24 @@ function Counter() {
   );
 }`,
   },
+  state2forTEST: {
+    title: "state2forTEST",
+    description:
+      "state2forTEST allows React components to change their output over time in response to user actions, network responses, and anything else.",
+    code: `
+function Counter() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  function handleClick() {
+    setIsVisible(true);
+  }
+
+  return (
+    <div>
+      <button onClick={handleClick}>Show Details</button>
+      {isVisible && <p>Amazing details!</p>}
+    </div>
+  );
+}`,
+  },
 };
