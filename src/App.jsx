@@ -3,7 +3,7 @@ import { Examples } from "./features/Examples.jsx";
 import { CoreConcepts } from "./features/CoreConcepts.jsx";
 
 const App = () => {
-  // picked out the features so far => CoreConcepts and Examples
+  // picked out the features => CoreConcepts and Examples
   // created new files and condensed app jsx significantly
   return (
     <div>

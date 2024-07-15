@@ -1,56 +1,16 @@
-import { useState } from "react";
-
-import { TabButton } from "../components/TabButton/TabButton.jsx";
 import { Section } from "../components/Section.jsx";
+import { JBNCustomTabs } from "../components/Tabs/JBNCustomTabs.jsx";
+
 import { EXAMPLES } from "../data.js";
 
 export const Examples = () => {
-  const [tab, setTab] = useState(null);
-
-  const handleClick = (selectedTab) => {
-    setTab(selectedTab);
-  };
+  //make sure tabTitles matches the data or wont work
   return (
-    <Section title="Examples" id="examples">
-      <menu>
-        <TabButton
-          isSelectedTab={tab === "components"}
-          onClick={() => handleClick("components")}
-        >
-          Components
-        </TabButton>
-        <TabButton
-          isSelectedTab={tab === "jsx"}
-          onClick={() => handleClick("jsx")}
-        >
-          JSX
-        </TabButton>
-        <TabButton
-          isSelectedTab={tab === "props"}
-          onClick={() => handleClick("props")}
-        >
-          Props
-        </TabButton>
-        <TabButton
-          isSelectedTab={tab === "state"}
-          onClick={() => handleClick("state")}
-        >
-          State
-        </TabButton>
-      </menu>
-      <div id="tab-content">
-        {tab !== null ? (
-          <>
-            <h3>{EXAMPLES[tab].title}</h3>
-            <p>{EXAMPLES[tab].description}</p>
-            <pre>
-              <code>{EXAMPLES[tab].code}</code>
-            </pre>
-          </>
-        ) : (
-          "Please Select A Topic"
-        )}
-      </div>
+    <Section title="Custom Tab Component Example" id="examples">
+      <JBNCustomTabs
+        data={EXAMPLES}
+        tabTitles={["components", "jsx", "props", "state", "state2forTEST"]}
+      />
     </Section>
   );
 };
